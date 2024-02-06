@@ -1,0 +1,41 @@
+<!-- sldsValidatorIgnore -->
+<!-- class="slds-m-left_medium" -->
+<template>   
+
+    <lightning-card title="Two way data binding">
+        <div class="slds-var-m-left_medium" >
+          Me chamo {fullName} e sou {title} Salesforce.
+        </div>        
+        <lightning-input 
+        class="slds-var-m-left_medium slds-m-right_large" 
+        type="text" 
+        label="Enter your title here" 
+        onkeyup={changeHandler} 
+        placeholder="type here...">
+        </lightning-input>
+
+    </lightning-card>
+
+    <lightning-card title="@track proprieties">
+        <div class="slds-var-m-left_medium" >
+          {address.city} is my City and the State is {address.state}.
+        </div>        
+        <lightning-input 
+        class="slds-var-m-left_medium slds-m-right_large" 
+        type="text" 
+        label="Enter City Name" 
+        onkeyup={trackHandler} 
+        placeholder="type here...">
+        </lightning-input>
+
+    </lightning-card>
+
+    <lightning-card title="Getter Demo">
+        <div class="slds-var-m-left_medium" >
+         <div>Fisrt name is: {firstUser}</div>
+         <div>Multiplication of num1 and num2 is: {multiply}</div>
+        </div>     
+    </lightning-card>
+
+
+</template>

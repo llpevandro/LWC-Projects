@@ -1,0 +1,49 @@
+<template>
+
+    <lightning-card title="Looping Component - for:each loop with array">
+        <div class="slds-var-m-left_medium" >
+            <ul class="slds-has-dividers_around-space slds-m-right_small">
+                <template for:each={carlist} for:item="car">
+                   <li key={id} class="slds-item">{car}</li>
+                </template>
+            </ul>
+        </div>        
+    </lightning-card>
+
+    <lightning-card title="Looping Component - for:each loop with object">
+        <div class="slds-var-m-left_medium" >
+            <ul class="slds-has-dividers_around-space slds-m-right_small">
+                <template for:each={ceoList} for:item="list">
+                    <li key={list} class="slds-item">{list.name} {list.company}</li>
+                </template>
+            </ul>
+        </div>        
+    </lightning-card>
+
+    <lightning-card title="iterator loop">
+        <div class="slds-var-m-around_medium">
+            <ul class="slds-has-dividers_around-space">
+                <template iterator:ceo={ceoList}>
+                    <li key={ceo.value.id}>
+                        <template if:true={ceo.first}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>List of top companies and their CEOs</strong>
+                            </div>
+                        </template>
+                        
+                        <div class="slds-item">
+                            <strong>{ceo.value.company} - </strong>{ceo.value.name}
+                        </div>
+     
+                        <template if:true={ceo.last}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>Thanks for reading the list</strong>
+                            </div>
+                        </template>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </lightning-card>
+
+</template>
